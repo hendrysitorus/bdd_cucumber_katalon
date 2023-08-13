@@ -17,17 +17,17 @@
 ## (Comments)
 #Sample Feature Definition Template
 @tag
-Feature: Login
-
-	Background 
-	Given Open https://katalon-demo-cura.herokuapp.com/
+Feature: Login feature
 
   @tag1
-  Scenario Outline: Login Page
-    When I check for the <value> in step
-    Then I verify the <status> in step
+  Scenario Outline: Test login with valid credentials
+    Given User navigates to login page
+    When User enters <username> and <password>
+    And Click on login button
+    Then User is navigated to homepage
 
     Examples: 
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
+      | username  | password |
+      | ABC 			| 123			 |
+      | DEF				| 456 		 | 
+      

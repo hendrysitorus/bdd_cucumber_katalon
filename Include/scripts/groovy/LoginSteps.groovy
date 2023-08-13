@@ -43,22 +43,27 @@ import cucumber.api.java.en.When
 
 
 
-class LoginStepDefinition {
-	/**
-	 * The step definitions below match with Katalon sample Gherkin steps
-	 */
-	@Given("I want to write a step with (.*)")
-	def I_want_to_write_a_step_with_name(String name) {
-		println name
+class LoginSteps {
+	
+	@Given ("User navigates to login page")
+	def navigateToLoginPage() {
+		println ("\n I am inside navigateToLoginPage")
 	}
-
-	@When("I check for the (.*) in step")
-	def I_check_for_the_value_in_step(int value) {
-		println value
+	 
+	@When("User enters (.*) and (.*)")
+	def enterCredentials(String username, String password) {
+		println ("\n I am insede enterCredentials")
+		println ("Username : " +username )
+		println ("Password : " +password)
 	}
-
-	@Then("I verify the (.*) in step")
-	def I_verify_the_status_in_step(String status) {
-		println status
+	
+	@And ("Click on login button")
+	def clickLogin() {
+		println ("\n I am inside clickLogin")
+	}
+	
+	@Then("User is navigated to homepage")
+	def verifyHomePage() {
+		println ("\n I am inside home page")
 	}
 }
